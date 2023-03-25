@@ -6,6 +6,12 @@ const style = {
 
 export const ChildArea = (props) => {
   const {open} = props;
+
+  const data = [...Array(2000).keys()];
+  data.forEach(() => {
+    console.log('aaa');
+  })
+
   return (
     <>
       {open ? (
