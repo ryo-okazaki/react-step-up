@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import './App.css'
 import {ChildArea} from "./components/ChildArea.jsx";
 
@@ -17,6 +17,10 @@ function App() {
 
   // useCallbackはuseEffectと一緒で、第二引数に監視したい値を入れる
   // useCallbackを使うと、最初に生成した関数をずっと使うという意味
+
+  const temp = useMemo(() => 1 + 3, []);
+  // 再レンダリングの度に計算しなくて済むようになる
+  console.log(temp);
 
   return (
     <div className="App">
