@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import './App.css'
 import {ChildArea} from "./components/ChildArea.jsx";
 
@@ -10,7 +10,13 @@ function App() {
 
   const onClickOpen = () => setOpen(!open);
 
-  const onClickClose = () => setOpen(false);
+  const onClickClose = useCallback(() => setOpen(false), [setOpen]);
+  // アロー関数で定義した関数は、毎回新しい関数を生成していると判断している
+  // propsとしては毎回違う関数と認定するので、propsが変わっているという判定になる
+  // そのため、ChildAreaが毎回更新されてしまう
+
+  // useCallbackはuseEffectと一緒で、第二引数に監視したい値を入れる
+  // useCallbackを使うと、最初に生成した関数をずっと使うという意味
 
   return (
     <div className="App">
