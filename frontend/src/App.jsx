@@ -10,13 +10,18 @@ function App() {
 
   const onClickOpen = () => setOpen(!open);
 
+  const onClickClose = () => setOpen(false);
+
   return (
     <div className="App">
       <input value={text} onChange={onchangeText} />
       <br />
       <br />
       <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open}/>
+      <ChildArea
+        open={open}
+        onClickClose={onClickClose}
+      />
     </div>
   )
 }
