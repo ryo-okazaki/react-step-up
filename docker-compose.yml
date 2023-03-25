@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  node:
+    container_name: frontend_react
+    build:
+      context: ./
+      dockerfile: ./docker/frontend/Dockerfile
+    ports:
+      - "8080:5173"
+    environment:
+      - WDS_SOCKET_PORT=0
+    volumes:
+      - ./frontend:/app
