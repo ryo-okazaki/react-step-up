@@ -11,3 +11,15 @@ services:
       - WDS_SOCKET_PORT=0
     volumes:
       - ./frontend:/app
+
+  node2:
+    container_name: frontend_react2
+    build:
+      context: ./
+      dockerfile: ./docker/frontend2/Dockerfile
+    ports:
+      - "8081:5173"
+    environment:
+      - WDS_SOCKET_PORT=0
+    volumes:
+      - ./frontend2:/app
