@@ -4,6 +4,8 @@ import { Home } from './Home';
 import { Page1 } from './Page1';
 import { Page2 } from './Page2';
 import './App.css'
+import { Page1DetailA } from "./Page1DetailA.jsx";
+import { Page1DetailB } from "./Page1DetailB.jsx";
 
 function App() {
   return (
@@ -20,9 +22,21 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/page1">
-          <Page1 />
-        </Route>
+        <Route
+          path="/page1"
+          render={() => (
+            <Switch>
+              <Route exact path='/page1'>
+                <Page1 />
+              </Route>
+              <Route path='/page1/detailA'>
+                <Page1DetailA />
+              </Route>
+              <Route path='/page2/detailB'>
+                <Page1DetailB />
+              </Route>
+            </Switch>
+          )} />
         <Route exact path="/page2">
           <Page2 />
         </Route>
