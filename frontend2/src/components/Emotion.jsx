@@ -19,8 +19,8 @@ export const Emotion = () => {
   })
 
   return (
-    <div css={containerStyle}>
-      <p css={titleStyle}>- Emotion -</p>
+    <div className={containerStyle}>
+      <p className={titleStyle}>- Emotion -</p>
       <SButton>Fight!!</SButton>
     </div>
   );
