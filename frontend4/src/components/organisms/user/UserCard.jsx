@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import {Card} from "../../atoms/card/Card.jsx";
+import {UserIconWithName} from "../../molecules/user/UserIconWithName.jsx";
 
 export const UserCard = (props) => {
   const {user} = props;
 
   return (
     <Card>
-      <img height={160} width={160} src={user.image} alt={user.name} />
-      <p>{user.name}</p>
+      <UserIconWithName image={user.image} name={user.name} />
       <Sdl>
         <dt>メール</dt>
         <dd>{user.email}</dd>
@@ -31,5 +31,7 @@ const Sdl = styled.dl`
   dd {
     padding-left: 32px;
     padding-bottom: 8px;
+    overflow-wrap: break-word;
+  //  要素からはみ出たら折り返してくれる。
   }
 `
