@@ -2,6 +2,7 @@ import {Route, Switch} from "react-router-dom";
 import {Home} from "../Home.jsx";
 import {page1Routes} from "./Page1Routes.jsx";
 import {page2Routes} from "./Page2Routes.jsx";
+import {Page404} from "../Page404.jsx";
 
 export const Router = () => {
   return (
@@ -41,6 +42,9 @@ export const Router = () => {
           </Switch>
         )} />
       >
+      <Route path="*">
+        <Page404 />
+      </Route>
     </Switch>
   );
 }
