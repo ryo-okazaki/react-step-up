@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import React, {memo, useContext} from "react";
 import {UserContext} from "../../../providers/UserProvider.jsx";
+import {useRecoilValue} from "recoil";
+import {userState} from "../../../store/userState.js";
 
 export const UserIconWithName = memo((props) => {
   console.log('icon')
   const {image, name} = props;
-  const {userInfo} = useContext(UserContext);
+  // const {userInfo} = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
 
   return (
