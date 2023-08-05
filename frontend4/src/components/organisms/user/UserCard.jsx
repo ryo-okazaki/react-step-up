@@ -1,9 +1,11 @@
+import styled from "styled-components";
+
 export const UserCard = () => {
   return (
     <div>
       <img height={160} width={160} src='https://source.unsplash.com/ZCHj_2lJP00' alt="プロフィール" />
       <p>名前</p>
-      <dl>
+      <Sdl>
         <dt>メール</dt>
         <dd>dummy@example.com</dd>
         <dt>TEL</dt>
@@ -12,8 +14,19 @@ export const UserCard = () => {
         <dd>ダミー株式会社</dd>
         <dt>Webサイト</dt>
         <dd>example.com</dd>
-      </dl>
+      </Sdl>
     </div>
   )
 }
 
+const Sdl = styled.dl`
+  text-align: left;
+  margin-bottom: 0;
+  dt {
+    float: left;
+  }
+  dd {
+    padding-left: 32px;
+    padding-bottom: 8px;
+  }
+`
