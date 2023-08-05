@@ -3,6 +3,7 @@ import {PrimaryButton} from "./components/atoms/buttons/PrimaryButton.jsx";
 import {SecondaryButton} from "./components/atoms/buttons/SecondaryButton.jsx";
 import {SearchInput} from "./components/molecules/SearchInput.jsx";
 import {UserCard} from "./components/organisms/user/UserCard.jsx";
+import {HeaderOnly} from "./components/templates/HeaderOnly.jsx";
 
 const user = {
   name: 'test',
@@ -17,13 +18,13 @@ const user = {
 
 function App() {
   return (
-    <div className="app">
+    <HeaderOnly>
       <PrimaryButton>テスト</PrimaryButton>
       <SecondaryButton>検索</SecondaryButton>
       <br/>
       <SearchInput></SearchInput>
       <UserCard user={user} />
-    </div>
+    </HeaderOnly>
   )
 }
 
