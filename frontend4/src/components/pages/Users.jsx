@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Users = () => {
   return (
     <SContainer>
-      <h2>TOPページ</h2>
+      <h2>ユーザー一覧</h2>
     </SContainer>
   )
 }
