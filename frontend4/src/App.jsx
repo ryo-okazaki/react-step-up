@@ -4,6 +4,7 @@ import {SecondaryButton} from "./components/atoms/buttons/SecondaryButton.jsx";
 import {SearchInput} from "./components/molecules/SearchInput.jsx";
 import {UserCard} from "./components/organisms/user/UserCard.jsx";
 import {HeaderOnly} from "./components/templates/HeaderOnly.jsx";
+import {BrowserRouter} from "react-router-dom";
 
 const user = {
   name: 'test',
@@ -18,13 +19,15 @@ const user = {
 
 function App() {
   return (
-    <HeaderOnly>
-      <PrimaryButton>テスト</PrimaryButton>
-      <SecondaryButton>検索</SecondaryButton>
-      <br/>
-      <SearchInput></SearchInput>
-      <UserCard user={user} />
-    </HeaderOnly>
+    <BrowserRouter>
+      <HeaderOnly>
+        <PrimaryButton>テスト</PrimaryButton>
+        <SecondaryButton>検索</SecondaryButton>
+        <br/>
+        <SearchInput></SearchInput>
+        <UserCard user={user} />
+      </HeaderOnly>
+    </BrowserRouter>
   )
 }
 
