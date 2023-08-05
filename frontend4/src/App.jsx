@@ -1,9 +1,12 @@
 import './App.css'
 import {Router} from "./router/Router.jsx";
+import {UserProvider} from "./providers/UserProvider.jsx";
 
 function App() {
   return (
-    <Router />
+    <UserProvider>
+      <Router />
+    </UserProvider>
   )
 }
 
