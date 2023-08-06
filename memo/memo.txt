@@ -15,3 +15,9 @@ Atomic Designに取り組む時のポイント
 「何に関心があるコンポーネントなのか」を意識しながら分割したりpropsを定義したりする
 React開発で人のコードを見る際、コンポーネントのpropsを見て「このコンポーネントは何がしたいのか」が分かるようになる
 必要以上にpropsで渡したり、propsで渡す必要がないものをpropsで渡したりすると、可読性が下がる
+
+・TypeScriptでライブラリを使用する際の型定義
+1. react-router-domを使用する場合、@types/react-router-domだと型定義がライブラリに内蔵されている
+2. @typesがなく、元々ライブラリに内蔵されている場合、ライブラリのGitHubを見にいき、以下を見分ける
+  → index.d.tsファイルがあるかどうか
+  → package.jsonの中のtypings: index.d.tsがあるかどうか
