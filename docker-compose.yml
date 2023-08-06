@@ -47,3 +47,15 @@ services:
       - WDS_SOCKET_PORT=0
     volumes:
       - ./frontend4:/app
+
+  node5:
+    container_name: frontend_react5
+    build:
+      context: ./
+      dockerfile: ./docker/frontend5/Dockerfile
+    ports:
+      - "8084:5173"
+    environment:
+      - WDS_SOCKET_PORT=0
+    volumes:
+      - ./frontend5:/app
