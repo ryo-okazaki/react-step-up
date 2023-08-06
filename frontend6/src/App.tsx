@@ -1,6 +1,7 @@
 import './App.css'
 import axios from "axios";
 import {useState} from "react";
+import {Todo} from "./Todo";
 
 export default function App() {
   const [todos, setTodos] = useState<any>([])
@@ -17,7 +18,7 @@ export default function App() {
     <>
       <button onClick={onClickFetchData}>データ取得</button>
       {todos.map((todo: any) => (
-        <p key={todo.id}>{todo.title}</p>
+        <Todo title={todo.title} userid={todo.userid} />
       ))}
     </>
   )
