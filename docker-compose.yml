@@ -71,4 +71,16 @@ services:
       - WDS_SOCKET_PORT=0
     volumes:
       - ./frontend6:/app
+
+  node7:
+    container_name: frontend_react7
+    build:
+      context: ./
+      dockerfile: ./docker/frontend7/Dockerfile
+    ports:
+      - "8086:5173"
+    environment:
+      - WDS_SOCKET_PORT=0
+    volumes:
+      - ./frontend7:/app
     tty: true
