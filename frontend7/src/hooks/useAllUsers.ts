@@ -4,7 +4,7 @@ import {UserProfile} from "../types/UserProfile";
 import axios from "axios";
 import {User} from "../types/api/user";
 
-export const useAllUsers = () => {
+export const useAllUsers: any = () => {
   const [userProfiles, setUserProfiles] = useState<Array<UserProfile>>([])
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
